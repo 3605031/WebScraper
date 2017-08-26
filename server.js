@@ -29,8 +29,10 @@ app.use(bodyParser.urlencoded({
 // Make public a static dir
 app.use(express.static("public"));
 
+
+const URI = process.env.MONGODB_URI || "mongodb://heroku_psqrkfg0:j61g8llvj50fjvbmbki0camcui@ds127892.mlab.com:27892/heroku_psqrkfg0"
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_psqrkfg0:j61g8llvj50fjvbmbki0camcui@ds127892.mlab.com:27892/heroku_psqrkfg0");
+mongoose.connect(URI);
 var db = mongoose.connection;
 
 // Show any mongoose errors
