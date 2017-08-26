@@ -47,6 +47,11 @@ db.once("open", function() {
 // Routes
 // ======
 
+app.get("/",function(req,res){
+   res.sendFile(path.join(__dirname, "/public/index.html"));
+})
+
+
 // A GET request to scrape the website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
